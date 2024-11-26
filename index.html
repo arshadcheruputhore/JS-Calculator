@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>JS Calculator</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    section{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .calculator-container{
+        width: 40%;
+        height: 60%;
+        box-shadow: 0px 0px 2px 0px;
+    }
+    .text-div input{
+        width: 100%;
+        border: none;
+        outline: none;
+        background: none;
+        height: 70px;
+        font-size: 2rem;
+        letter-spacing: 10px;
+        caret-color: transparent;
+        text-align: right;
+        padding: 0 50px;
+        cursor: default;
+        overflow: visible;
+    }
+    .text-div{
+        box-shadow: inset 0px 0px 1px;
+    }
+    .button-container{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .button-container .calc-btn button{
+        width: 100%;
+        height: 80px;
+        font-size: 2rem;
+        padding: 8px;
+        background: none;
+        border: none;
+    }
+    #clrBtn, #backclrBtn, #remain-btn, #divide-btn, #mult-btn, #minus-btn, #plus-btn{
+        color: orangered;
+        font-size: 2.2rem;
+    }
+
+</style>
+<body>
+    <section>
+        <div class="calculator-container">
+            <div class="text-div">
+                <input type="text" name="" id="textField">
+            </div>
+            <div class="button-container">
+                <div class="calc-btn"><button id="clrBtn" type="button" onclick="removeAllData()">AC</button></div>
+                <div class="calc-btn"><button id="backclrBtn" type="button" onclick="removeLastData()"><i class='bx bxs-left-arrow-square'></i></button></div>
+                <div class="calc-btn"><button id="remain-btn" type="button" onclick="showData('%')"><i class='fas fa-percentage'></i></button></div>
+                <div class="calc-btn"><button id="divide-btn" type="button" onclick="showData('/')"><i class='fas fa-divide'></i></button></div>
+                <div class="calc-btn"><button id="senve-btn" type="button" onclick="showData('7')">7</button></div>
+                <div class="calc-btn"><button id="eight-btn" type="button" onclick="showData('8')">8</button></div>
+                <div class="calc-btn"><button id="nine-btn" type="button" onclick="showData('9')">9</button></div>
+                <div class="calc-btn"><button id="mult-btn" type="button" onclick="showData('x')"><i class='fas fa-times'></i></button></div>
+                <div class="calc-btn"><button id="four-btn" type="button" onclick="showData('4')">4</button></div>
+                <div class="calc-btn"><button id="five-btn" type="button" onclick="showData('5')">5</button></div>
+                <div class="calc-btn"><button id="six-btn" type="button" onclick="showData('6')">6</button></div>
+                <div class="calc-btn"><button id="minus-btn" type="button" onclick="showData('-')"><i class='fas fa-minus'></i></button></div>
+                <div class="calc-btn"><button id="one-btn" type="button" onclick="showData('1')">1</button></div>
+                <div class="calc-btn"><button id="two-btn" type="button" onclick="showData('2')">2</button></div>
+                <div class="calc-btn"><button id="three-btn" type="button" onclick="showData('3')">3</button></div>
+                <div class="calc-btn"><button id="plus-btn" type="button" onclick="showData('+')"><i class='fas fa-plus'></i></button></div>
+                <div class="calc-btn"><button type="button" style="background-color: orangered; color: white; border-radius: 0 20px 0 0;"><i class="fas fa-calculator"></i></button></div>
+                <div class="calc-btn"><button id="zero-btn" type="button" onclick="showData('0')">0</button></div>
+                <div class="calc-btn"><button id="dot-btn" type="button" onclick="showData('.')">&#8226;</button></div>
+                <div class="calc-btn"><button id="equal-btn" type="button" onclick="showEval()"><i class="fas fa-equals" style="background-color: orangered; color: white; padding: 12px 13px; border-radius: 50%;"></i></button></div>
+            </div>
+        </div>
+    </section>
+
+
+<script src="./main.js"></script>
+</body>
+</html>
