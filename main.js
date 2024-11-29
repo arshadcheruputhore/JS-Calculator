@@ -6,7 +6,7 @@ inputField.addEventListener('paste', (e) => e.preventDefault());
 let result = 0;
 let preOpr = '';
 textField.value = '0';
-const operators = ['+', '-', 'x', '÷'];
+const operators = ['+', '-', '×', '÷'];
 
 const showData = (data) => {
     textField.style.fontWeight = 'normal';
@@ -67,7 +67,7 @@ const removeLastData = () => {
 
 const showEval = () => {
     if (textField.value !== 'Malformed Expression') {
-        let expression = textField.value.replace(/x/g, '*').replace(/÷/g, '/');
+        let expression = textField.value.replace(/×/g, '*').replace(/÷/g, '/');
 
         try {
             result = eval(expression);
@@ -100,7 +100,7 @@ const showRemain = () => {
                 }
             }
 
-            let expression = textField.value.replace(/x/g, '*').replace(/÷/g, '/');
+            let expression = textField.value.replace(/×/g, '*').replace(/÷/g, '/');
 
             if (lastOptr === "+" || lastOptr === '-') {
                 const NumBfr = eval(expression.slice(0, lastOptrIndex));
